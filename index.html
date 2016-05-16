@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crucible Podcasts</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,500italic,300,300italic,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700italic,700,400italic,300italic,300" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400italic,700,300italic,300,900" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="small-12 columns centered container" id="square">
+            <div class="small-6 columns left-side">
+                <div class="row collapse">
+                    <div class="small-12 columns podcast_number">
+                        <span>#</span>1
+                    </div>
+                </div>
+                <div class="row collapse">
+                    <div class="small-12 columns podcast_title">
+                        Um podcast com gente parva sobre assuntos parvos
+                    </div>
+                </div>
+                <!--<div class="row">
+                    <div class="small-12 columns">
+                        <audio controls>
+                            <source src="audio/Palace Cat - Crookshanks.mp3" type="audio/mpeg">
+                            <source src="audio/Palace Cat - Crookshanks.ogg" type="audio/ogg">
+                            <source src="audio/Palace Cat - Crookshanks.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                </div>-->
+            </div>
+            <div class="small-6 columns right-side">
+                <div class="row">
+                    <div class="small-1 small-offset-1 columns">
+                        <div class="red-block"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-8 small-offset-1 columns text-right-side">
+                        <h3>RESUMO</h3> Lorem ipsum dolor sit amet, usu at paulo tollit nusquam, choro nemore luptatum at pri. Qui ne illud oratio labitur. Eu eos fugit electram. Nam ex quodsi melius meliore, nemore aeterno equidem vel ei. No tota graecis nec. Ex justo
+                        nobis partiendo nec, ex quot velit mucius mei. Ad malorum definiebas disputationi nam, in veri noster definitionem pro. Causae albucius ponderum eum ex, id usu illum labitur, est id cibo doctus senserit.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-1 small-offset-1 columns">
+                        <div class="red-block"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-8 small-offset-1 columns text-right-side">
+                        <h3>RESUMO</h3> Lorem ipsum dolor sit amet, usu at paulo tollit nusquam, choro nemore luptatum at pri. Qui ne illud oratio labitur. Eu eos fugit electram. Nam ex quodsi melius meliore, nemore aeterno equidem vel ei. No tota graecis nec. Ex justo
+                        nobis partiendo nec, ex quot velit mucius mei. Ad malorum definiebas disputationi nam, in veri noster definitionem pro. Causae albucius ponderum eum ex, id usu illum labitur, est id cibo doctus senserit.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/vendor/what-input.js"></script>
+        <script src="js/vendor/foundation.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+            /* Copyright (c) 2009 Brandon Aaron (http://brandonaaron.net)
+             * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
+             * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
+             * Thanks to: http://adomas.org/javascript-mouse-wheel/ for some pointers.
+             * Thanks to: Mathias Bank(http://www.mathias-bank.de) for a scope bug fix.
+             *
+             * Version: 3.0.2
+             *
+             * Requires: 1.2.2+
+             */
+            (function(c) {
+                var a = ["DOMMouseScroll", "mousewheel"];
+                c.event.special.mousewheel = {
+                    setup: function() {
+                        if (this.addEventListener) {
+                            for (var d = a.length; d;) {
+                                this.addEventListener(a[--d], b, false)
+                            }
+                        } else {
+                            this.onmousewheel = b
+                        }
+                    },
+                    teardown: function() {
+                        if (this.removeEventListener) {
+                            for (var d = a.length; d;) {
+                                this.removeEventListener(a[--d], b, false)
+                            }
+                        } else {
+                            this.onmousewheel = null
+                        }
+                    }
+                };
+                c.fn.extend({
+                    mousewheel: function(d) {
+                        return d ? this.bind("mousewheel", d) : this.trigger("mousewheel")
+                    },
+                    unmousewheel: function(d) {
+                        return this.unbind("mousewheel", d)
+                    }
+                });
+
+                function b(f) {
+                    var d = [].slice.call(arguments, 1),
+                        g = 0,
+                        e = true;
+                    f = c.event.fix(f || window.event);
+                    f.type = "mousewheel";
+                    if (f.wheelDelta) {
+                        g = f.wheelDelta / 120
+                    }
+                    if (f.detail) {
+                        g = -f.detail / 3
+                    }
+                    d.unshift(f, g);
+                    return c.event.handle.apply(this, d)
+                }
+            })(jQuery);
+
+            /*
+            The following not-working code is from:
+            http://stackoverflow.com/questions/1326570/how-to-disable-browser-or-element-scrollbar-but-let-scrolling-with-wheel-or-arro*/
+            $("div").bind("mousewheel", function(ev, delta) {
+                var scrollTop = $(this).scrollTop();
+                $(this).scrollTop(scrollTop - Math.round(delta * 20));
+            });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+/* ========= MAKE BODY FULL SCREEN WITHOUT OVERFLOW =========  */
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    color: #222222;
+    margin: 0;
+    height: 100vh;
+    width: auto;
+    overflow: hidden;
+}
+body {
+    background: #131417;
+}
+
+/* ========= CENTERS DIV ON SCREEN =========  */
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+/* ========= CONTAINER OF MAIN DIV =========  */
+
+.container {
+    width: 50vw;
+    height: 50vh;
+    padding: 0;
+    -webkit-box-shadow: 0px 0px 35px -5px rgba(0, 0, 0, 0.85);
+    -moz-box-shadow: 0px 0px 35px -5px rgba(0, 0, 0, 0.85);
+    box-shadow: 0px 0px 35px -5px rgba(0, 0, 0, 0.85);
+    overflow: hidden;
+}
+
+/* ========= LEFT SIDE OF MAIN DIV =========  */
+
+.left-side {
+    position: relative;
+    background: #bba460;
+    height: 100%;
+}
+.podcast_number {
+    font-family: 'Merriweather', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 6.5rem;
+}
+.podcast_number span {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.podcast_title {
+    font-family: 'Merriweather', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 2.6rem;
+    line-height: 1.2;
+}
+
+/* ========= RIGHT SIDE OF MAIN DIV =========  */
+
+.right-side {
+    position: relative;
+    background: #1c1e22;
+    overflow-y: scroll;
+    height: 100%;
+}
+.red-block {
+    background: #E53935;
+    height: 5px;
+    margin-top: 25px;
+    width: 50px;
+}
+.text-right-side {
+    color: #afafaf;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    padding-top: 15px;
+    line-height: 1.7;
+
+}
+.text-right-side h3 {
+    color: #FFF;
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 5px;
+}
+
+/* ========= PODCAST PLAYER =========  */
