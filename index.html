@@ -20,12 +20,12 @@
         <div class="small-12 columns centered container" id="square">
             <div class=" large-6 small-12 columns left-side">
                 <div class="row collapse">
-                    <div class="small-12 columns podcast_number hide-for-small-only hide-for-medium-only">
+                    <div class="small-10 small-offset-1 columns podcast_number hide-for-small-only hide-for-medium-only">
                         <span class="">#</span>1
                     </div>
                 </div>
                 <div class="row collapse">
-                    <div class="large-12 small-10 small-offset-1 large-offset-0 columns podcast_title">
+                    <div class="large-10 small-10 small-offset-1 large-offset-1 columns podcast_title">
                         Um podcast com gente parva sobre assuntos parvos
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class=" large-6 small-12 columns right-side">
+            <div class=" large-6 small-12 columns right-side slimScroll">
                 <div class="row">
                     <div class="small-1 small-offset-1 columns">
                         <div class="red-block"></div>
@@ -70,11 +70,40 @@
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/plyr.js"></script>
+    <script src="js/slimscroll.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
     <script>
-        plyr.setup({debug: "true", displayDuration: "false", volume: "5", controls: ["play", "progress", "current-time", "mute"], iconUrl: "plyr.svg"});
+        plyr.setup({
+            debug: "true",
+            displayDuration: "false",
+            volume: "5",
+            controls: ["play", "progress", "current-time", "mute"],
+            iconUrl: "plyr.svg"
+        });
+        window.onload = function() {
+            if (!navigator.userAgent.match('Macintosh')) {
+                var element = document.querySelectorAll('.slimScroll');
+                // Apply slim scroll plugin
+                var one = new slimScroll(element[0], {
+                    'wrapperClass': 'scroll-wrapper unselectable mac',
+                    'scrollBarContainerClass': 'scrollBarContainer',
+                    'scrollBarContainerSpecialClass': 'animate',
+                    'scrollBarClass': 'scroll',
+                    'keepFocus': true
+                });
+                // resize example
+                // To make the resizing work, set the height of the container in PERCENTAGE
+                window.onresize = function() {
+                    one.resetValues();
+                    two.resetValues();
+                    three.resetValues();
+                }
+            } else {
+                document.write("For Mac users, this custom slimscroll styles will not be applied");
+            }
+        }
     </script>
 
 
