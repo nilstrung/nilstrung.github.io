@@ -47,11 +47,7 @@ body {
     background: #bba460;
     height: 100%;
 }
-@media only screen and (max-width: 64em) {
-    .left-side {
-        height: 50%;
-    }
-}
+
 .podcast_number {
     font-family: 'Merriweather', serif;
     font-weight: 500;
@@ -71,6 +67,18 @@ body {
     font-size: 2.6rem;
     font-size: 2.6vw;
     line-height: 1.2;
+}
+@media only screen and (max-width: 64em) {
+    .left-side {
+        height: 50%;
+    }
+    .podcast_title {
+        padding: 35px;
+        font-size: 7vmin;
+    }
+    .podcast_number {
+        font-size: 10vmin;
+    }
 }
 
 /* ========= RIGHT SIDE OF MAIN DIV =========  */
