@@ -33,6 +33,12 @@ body {
     box-shadow: 0px 0px 35px -5px rgba(0, 0, 0, 0.85);
     overflow: hidden;
 }
+@media only screen and (max-width: 64em) {
+    .container {
+        width: 80vw;
+        height: 80vh;
+    }
+}
 
 /* ========= LEFT SIDE OF MAIN DIV =========  */
 
@@ -41,21 +47,29 @@ body {
     background: #bba460;
     height: 100%;
 }
+@media only screen and (max-width: 64em) {
+    .left-side {
+        height: 50%;
+    }
+}
 .podcast_number {
     font-family: 'Merriweather', serif;
     font-weight: 500;
     font-style: italic;
     font-size: 6.5rem;
+    font-size: 6.5vw;
 }
 .podcast_number span {
     font-weight: 400;
     font-size: 1.5rem;
+    font-size: 1.5vw;
 }
 .podcast_title {
     font-family: 'Merriweather', sans-serif;
     font-weight: 800;
     font-style: italic;
     font-size: 2.6rem;
+    font-size: 2.6vw;
     line-height: 1.2;
 }
 
@@ -66,6 +80,11 @@ body {
     background: #1c1e22;
     overflow-y: scroll;
     height: 100%;
+}
+@media only screen and (max-width: 64em) {
+    .right-side {
+        height: 50%;
+    }
 }
 .red-block {
     background: #E53935;
@@ -78,24 +97,25 @@ body {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     font-size: 0.8rem;
+    font-size: 0.7vw;
     padding-top: 15px;
     line-height: 1.7;
-
 }
 .text-right-side h3 {
     color: #FFF;
     font-family: 'Lato', sans-serif;
     font-weight: 800;
     font-size: 1.3rem;
+    font-size: 1.3vw;
     letter-spacing: 5px;
 }
 
 /* ========= PODCAST PLAYER =========  */
+
 .audio-player {
     position: absolute;
     bottom: 0;
 }
-
 .plyr--audio .plyr__controls {
     padding: 10px;
     border-radius: inherit;
@@ -107,11 +127,9 @@ body {
 .plyr--audio .plyr__progress--buffer {
     color: #222;
 }
-
 .plyr--audio .plyr__progress--buffer, .plyr--audio .plyr__volume--display {
     background: #454545;
 }
-
 .plyr__progress--played, .plyr__volume--display {
     color: #E53935;
 }
