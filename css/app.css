@@ -69,7 +69,7 @@
             height: 50%;
         }
         .podcast_title {
-            padding: 35px;
+            padding-top: 8vh;
             font-size: 7vmin;
         }
         .podcast_number {
