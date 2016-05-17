@@ -29,8 +29,8 @@
                         Um podcast com gente parva sobre assuntos parvos
                     </div>
                 </div>
-                <!--<div class="row">
-                    <div class="small-12 columns">
+                <div class="row">
+                    <div class="small-12 columns audio-player">
                         <div class="plyr">
                             <audio controls>
                                 <source src="audio/Palace Cat - Crookshanks.mp3" type="audio/mpeg">
@@ -39,16 +39,6 @@
                             </audio>
                         </div>
                     </div>
-                </div>-->
-                <div class="plyr">
-                    <audio controls>
-                        <!-- Audio files -->
-                        <source src="audio/Palace Cat - Crookshanks.mp3" type="audio/mp3">
-                        <source src="audio/Palace Cat - Crookshanks.og" type="audio/ogg">
-
-                        <!-- Fallback for browsers that don't support the <audio> element -->
-                        <a href="/path/to/audio.mp3">Download</a>
-                    </audio>
                 </div>
             </div>
             <div class="small-6 columns right-side">
@@ -79,48 +69,15 @@
     </div>
 
     <script src="js/vendor/jquery.js"></script>
+    <script src="js/plyr.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/plyr.js"></script>
     <script>
-        (function() {
-            [
-                'plyr.svg',
-            ]
-            .forEach(function(u) {
-                var x = new XMLHttpRequest(),
-                    b = document.body;
-
-                // Check for CORS support
-                // If you're loading from same domain, you can remove the whole if/else statement
-                // XHR for Chrome/Firefox/Opera/Safari/IE10+
-                if ('withCredentials' in x) {
-                    x.open('GET', u, true);
-                }
-                // XDomainRequest for IE8 & IE9
-                else if (typeof XDomainRequest == 'function') {
-                    x = new XDomainRequest();
-                    x.open('GET', u);
-                } else {
-                    return;
-                }
-
-                // Inject hidden div with sprite on load
-                x.onload = function() {
-                    var c = document.createElement('div');
-                    c.setAttribute('hidden', '');
-                    c.innerHTML = x.responseText;
-                    b.insertBefore(c, b.childNodes[0]);
-                }
-
-                // Timeout for IE9
-                setTimeout(function() {
-                    x.send();
-                }, 0);
-            });
-        })();
+        plyr.setup({debug: "true", displayDuration: "false", volume: "5", controls: ["play", "progress", "current-time", "mute"], iconUrl: "plyr.svg"});
     </script>
+
+
 </body>
 
 </html>
