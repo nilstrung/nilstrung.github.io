@@ -43,26 +43,29 @@
         position: relative;
         background: #bba460;
         height: 100%;
+        color: #222222;
     }
     .podcast_number {
         font-family: 'Merriweather', serif;
         font-weight: 500;
         font-style: italic;
-        font-size: 6.5rem;
-        font-size: 6.5vw;
+        font-size: 6.853em;
+        font-size: 4.797vw;
+        color: #222;
     }
     .podcast_number span {
         font-weight: 400;
-        font-size: 1.5rem;
-        font-size: 1.5vw;
+        font-size: 4.236em;
+        font-size: 2.965vw;
     }
     .podcast_title {
         font-family: 'Merriweather', sans-serif;
         font-weight: 800;
         font-style: italic;
-        font-size: 2.4rem;
-        font-size: 2.2vw;
+        font-size: 4.236em;
+        font-size: 2.965vw;
         line-height: 1.2;
+        color: #222222;
     }
     @media only screen and (max-width: 64em) {
         .left-side {
@@ -94,7 +97,7 @@
         color: #afafaf;
         font-family: 'Lato', sans-serif;
         font-weight: 300;
-        font-size: 0.8rem;
+        font-size: 1em;
         font-size: 0.7vw;
         padding-top: 15px;
         line-height: 1.7;
@@ -103,8 +106,8 @@
         color: #FFF;
         font-family: 'Lato', sans-serif;
         font-weight: 800;
-        font-size: 1.3rem;
-        font-size: 1.3vw;
+        font-size: 1.619em;
+        font-size: 1.133vw;
         letter-spacing: 5px;
     }
     @media only screen and (max-width: 64em) {
